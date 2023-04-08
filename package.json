@@ -1,0 +1,17 @@
+{
+  "name": "itlogia-intensive",
+  "version": "1.0.0",
+  "description": "itlogia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "itlogia",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "Mikhail",
+  "license": "ISC"
+}
