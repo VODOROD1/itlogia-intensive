@@ -130,7 +130,7 @@ body {
 .car-item {
     max-width: 384px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .car-item-image {
@@ -161,4 +161,87 @@ body {
 
 .car-item-point img {
     margin-bottom: 11px;
+}
+
+.car-item-action {
+    margin-top: 13px;
+}
+
+.car-item-action .botton {
+    width: 100%;
+    padding: 15px;
+    height: 54px;
+}
+
+.car-item-point > div:nth-child(2) {
+    font-weight: bold;
+}
+
+.price {
+    overflow: hidden;
+}
+
+.price .container {
+    position: relative;
+    margin-bottom: 121px;
+}
+
+.price .sub-title {
+    margin-bottom: 20px;
+}
+
+.price-text {
+    font-size: 16px;
+    line-height: 130%;
+    color: #5D5D5F;
+    margin-bottom: 60px;
+}
+
+.price-form {
+    max-width: 344px;
+}
+
+.price-input {
+    padding: 22px 18px;
+    width: 344px;
+    height: 65px;
+    left: 360px;
+    top: 171px;
+    background: #FFFFFF;
+    border: 1px solid #5D5D5F;
+
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.price-input::placeholder {
+    color: #5D5D5F;
+}
+
+.price .button {
+    width: 100%;
+}
+
+.price-image {
+    position: absolute;
+    bottom: 0;
+    left: 401px;
+}
+
+.footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 25px 0;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rights {
+    font-size: 15px;
+    color: #030305;
 }
