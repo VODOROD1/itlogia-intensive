@@ -3,20 +3,17 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent {
   title = 'angular-cars';
 
-  @ViewChild('priceAction', {static: false})
-  public priceAction: ElementRef
+  @ViewChild('priceAction', { static: false })
+  public priceAction: ElementRef;
 
-  constructor() {
-    
-  }
+  constructor() {}
 
   goScroll(target: HTMLElement) {
-    target.scrollIntoView({behavior: "smooth"})
+    target.scrollIntoView({ behavior: 'smooth' });
   }
 }
