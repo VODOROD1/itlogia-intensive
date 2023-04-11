@@ -95,6 +95,7 @@ export class AppComponent {
   priceImage: ElementRef;
 
   constructor(private fb: FormBuilder) {
+    // Я решил добавить parallax-эффект на свой манер
     document.addEventListener('DOMContentLoaded', () => {
       document.addEventListener('scroll', () => {
         this.mainRef.nativeElement.style.backgroundPositionX = '0' + 0.3 * window.pageYOffset + 'px';
