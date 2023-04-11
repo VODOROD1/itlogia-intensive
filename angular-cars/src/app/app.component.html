@@ -18,7 +18,7 @@
     </nav>
   </div>
 </header>
-<section class="main">
+<section class="main" #main>
   <div class="container">
     <div class="main-info">
       <h1 class="main-title">Аренда премиальных автомобилей</h1>
@@ -41,27 +41,26 @@
   <div class="container">
     <h2 class="sub-title">Наш автопарк</h2>
     <div class="car-items">
-
       <div class="car-item" *ngFor="let car of carsData">
         <div class="car-item-image">
-          <img src="../assets/images/{{car.image}}" alt="{{car.image}}" />
+          <img src="../assets/images/{{ car.image }}" alt="{{ car.image }}" />
         </div>
-        <div class="car-item-title">{{car.name}}</div>
+        <div class="car-item-title">{{ car.name }}</div>
         <div class="car-item-info">
           <div class="car-item-point">
             <img src="../assets/images/transmission.png" alt="transmission" />
             <div>Коробка</div>
-            <div>{{car.transmission}}</div>
+            <div>{{ car.transmission }}</div>
           </div>
           <div class="car-item-point">
             <img src="../assets/images/wheel.png" alt="wheel" />
             <div>Двигатель</div>
-            <div>{{car.engine}}</div>
+            <div>{{ car.engine }}</div>
           </div>
           <div class="car-item-point">
             <img src="../assets/images/year.png" alt="belt" />
             <div>Год выпуска</div>
-            <div>{{car.year}}</div>
+            <div>{{ car.year }}</div>
           </div>
         </div>
         <div class="car-item-action">
@@ -70,7 +69,7 @@
           </button>
         </div>
       </div>
-<!--  -->
+      <!--  -->
       <!-- <div class="car-item">
         <div class="car-item-image">
           <img src="../assets/images/1.png" alt="image 1" />
@@ -381,7 +380,12 @@
         Узнать цену
       </button>
     </form>
-    <img src="../assets/images/rolls.png" alt="rolls" class="price-image" />
+    <img
+      src="../assets/images/rolls.png"
+      alt="rolls"
+      class="price-image"
+      #priceImage
+    />
   </div>
 </section>
 <footer class="footer">
