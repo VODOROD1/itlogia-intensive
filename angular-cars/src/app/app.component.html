@@ -41,7 +41,37 @@
   <div class="container">
     <h2 class="sub-title">Наш автопарк</h2>
     <div class="car-items">
-      <div class="car-item">
+
+      <div class="car-item" *ngFor="let car of carsData">
+        <div class="car-item-image">
+          <img src="../assets/images/{{car.image}}" alt="{{car.image}}" />
+        </div>
+        <div class="car-item-title">{{car.name}}</div>
+        <div class="car-item-info">
+          <div class="car-item-point">
+            <img src="../assets/images/transmission.png" alt="transmission" />
+            <div>Коробка</div>
+            <div>{{car.transmission}}</div>
+          </div>
+          <div class="car-item-point">
+            <img src="../assets/images/wheel.png" alt="wheel" />
+            <div>Двигатель</div>
+            <div>{{car.engine}}</div>
+          </div>
+          <div class="car-item-point">
+            <img src="../assets/images/year.png" alt="belt" />
+            <div>Год выпуска</div>
+            <div>{{car.year}}</div>
+          </div>
+        </div>
+        <div class="car-item-action">
+          <button class="button car-button" (click)="goScroll(price)">
+            Забронировать
+          </button>
+        </div>
+      </div>
+<!--  -->
+      <!-- <div class="car-item">
         <div class="car-item-image">
           <img src="../assets/images/1.png" alt="image 1" />
         </div>
@@ -300,7 +330,7 @@
             Забронировать
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
