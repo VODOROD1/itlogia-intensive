@@ -111,8 +111,11 @@ export class AppComponent {
     });
   }
 
-  goScroll(target: HTMLElement) {
-    target.scrollIntoView({ behavior: 'smooth' });
+  goScroll(target: HTMLElement, car?: ICar) {
+    target.scrollIntoView({behavior: "smooth"});
+    if (car) {
+      this.priceForm.patchValue({car: car.name});
+    }
   }
 
   priceActionHandler() {
