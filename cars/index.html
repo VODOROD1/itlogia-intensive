@@ -36,7 +36,7 @@
                     В нашем клубе имеется солидная коллекция спортивных автомобилей — от достаточно распространенных серийных машин до настоящего гоночного эксклюзива. Воспользуйтесь уникальной возможностью побывать за рулем настоящей легенды и узнать, на что она способна за пределами гоночной трассы!
                 </div>
                 <div class="main-action">
-                    <button class="button">
+                    <button class="button" id="main-action">
                         Посмотреть автомобили
                     </button>
                 </div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -198,7 +198,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -229,7 +229,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -291,7 +291,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -322,7 +322,7 @@
                         </div>
                     </div>
                     <div class="car-item-action">
-                        <button class="button">
+                        <button class="button car-button">
                             Забронировать
                         </button>
                     </div>
@@ -340,10 +340,10 @@
                 Заполните данные, и мы перезвоним вам для уточнения всех деталей бронирования
             </div>
             <form action="" class="price-form">
-                <input type="text" class="price-input" placeholder="Ваше имя">
-                <input type="text" class="price-input" placeholder="Ваш телефон">
-                <input type="text" class="price-input" placeholder="Автомобиль, который вас интересует">
-                <button class="button"></button>
+                <input type="text" class="price-input" id="name-input" placeholder="Ваше имя">
+                <input type="text" class="price-input" id="telephone-input" placeholder="Ваш телефон">
+                <input type="text" class="price-input" id="car-input" placeholder="Автомобиль, который вас интересует">
+                <button class="button" id="price-action" type="button">Узнать цену</button>
             </form>
             <img src="./images/rolls.png" alt="rolls" class="price-image">
         </div>
@@ -358,5 +358,6 @@
             </div>
         </div>
     </footer>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
