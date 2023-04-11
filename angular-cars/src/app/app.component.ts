@@ -88,17 +88,18 @@ export class AppComponent {
     },
   ];
 
-  @ViewChild('main', {static: false})
+  @ViewChild('main', { static: false })
   mainRef: ElementRef;
 
-  @ViewChild('priceImage', {static: false})
+  @ViewChild('priceImage', { static: false })
   priceImage: ElementRef;
 
   constructor(private fb: FormBuilder) {
     // Я решил добавить parallax-эффект на свой манер
     document.addEventListener('DOMContentLoaded', () => {
       document.addEventListener('scroll', () => {
-        this.mainRef.nativeElement.style.backgroundPositionX = '0' + 0.3 * window.pageYOffset + 'px';
+        this.mainRef.nativeElement.style.backgroundPositionX =
+          '0' + 0.3 * window.pageYOffset + 'px';
       });
 
       document.addEventListener('mousemove', (event) => {
@@ -113,9 +114,9 @@ export class AppComponent {
   }
 
   goScroll(target: HTMLElement, car?: ICar) {
-    target.scrollIntoView({behavior: "smooth"});
+    target.scrollIntoView({ behavior: 'smooth' });
     if (car) {
-      this.priceForm.patchValue({car: car.name});
+      this.priceForm.patchValue({ car: car.name });
     }
   }
 
