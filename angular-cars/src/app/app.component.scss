@@ -85,9 +85,15 @@
   transition: background-color 0.5s;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
   cursor: pointer;
   background: #575757;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: gray;
+  background: #343434;
 }
 
 .car {
@@ -230,4 +236,12 @@
 .rights {
   font-size: 15px;
   color: #030305;
+}
+
+.price-input.ng-touched.ng-valid {
+  border: 1px solid #5d5d5f;
+}
+
+.price-input.ng-touched.ng-invalid {
+  border: 1px solid red;
 }
