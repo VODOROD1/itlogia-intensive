@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AppService } from './app.service';
 
 interface ICar {
   image: string;
@@ -14,6 +15,7 @@ interface ICar {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent {
   title = 'angular-cars';
   priceForm: FormGroup = this.fb.group({
@@ -94,7 +96,7 @@ export class AppComponent {
   @ViewChild('priceImage', { static: false })
   priceImage: ElementRef;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private appService: AppService) {
     // Я решил добавить parallax-эффект на свой манер
     document.addEventListener('DOMContentLoaded', () => {
       document.addEventListener('scroll', () => {
@@ -123,6 +125,7 @@ export class AppComponent {
   priceActionHandler() {
     if (this.priceForm.valid) {
       alert('Спасибо за заявку, мы свяжемся с вами в ближайшее время!');
+      this.appService.sendQuary(this.priceForm);
     }
 
     if (this.priceForm.get('name')?.value === '') {
