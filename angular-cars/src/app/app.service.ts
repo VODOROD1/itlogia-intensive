@@ -11,8 +11,12 @@ export class AppService {
   }
 
   sendQuary(data: any) {
+    debugger;
     return this.http.post('https://testologia.site/intensive-price', data)
   }
 
-  
+  getData() {
+    debugger;
+    return this.http.get('https://testologia.site/intensive-data')
+  }
 }

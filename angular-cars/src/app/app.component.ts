@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppService } from './app.service';
 
@@ -16,7 +16,7 @@ interface ICar {
   styleUrls: ['./app.component.scss'],
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-cars';
   priceForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
@@ -24,71 +24,7 @@ export class AppComponent {
     car: ['', Validators.required],
   });
 
-  carsData: ICar[] = [
-    {
-      image: '1.png',
-      name: 'Lamborghini Huracan Spyder',
-      transmission: 'автомат',
-      engine: '5.2 л.с.',
-      year: '2019',
-    },
-    {
-      image: '2.png',
-      name: 'Chevrolet Corvette',
-      transmission: 'автомат',
-      engine: '6.2 л.с.',
-      year: '2017',
-    },
-    {
-      image: '3.png',
-      name: 'Ferrari California',
-      transmission: 'автомат',
-      engine: '3.9 л.с.',
-      year: '2010',
-    },
-    {
-      image: '4.png',
-      name: 'Lamborghini Urus',
-      transmission: 'автомат',
-      engine: '4.0 л.с.',
-      year: '2019',
-    },
-    {
-      image: '5.png',
-      name: 'Audi R8',
-      transmission: 'автомат',
-      engine: '5.2 л.с.',
-      year: '2018',
-    },
-    {
-      image: '6.png',
-      name: 'Chevrolet Camaro',
-      transmission: 'автомат',
-      engine: '2.0 л.с.',
-      year: '2019',
-    },
-    {
-      image: '7.png',
-      name: 'Maserati Quattroporte',
-      transmission: 'автомат',
-      engine: '3.0 л.с.',
-      year: '2018',
-    },
-    {
-      image: '8.png',
-      name: 'Dodge Challenger',
-      transmission: 'автомат',
-      engine: '6.4 л.с.',
-      year: '2019',
-    },
-    {
-      image: '9.png',
-      name: 'Nissan GT-R',
-      transmission: 'автомат',
-      engine: '3.8 л.с.',
-      year: '2019',
-    },
-  ];
+  carsData: ICar[];
 
   @ViewChild('main', { static: false })
   mainRef: ElementRef;
@@ -115,6 +51,19 @@ export class AppComponent {
     });
   }
 
+  ngOnInit() {
+    this.appService.getData()
+    .subscribe({
+      next: (res) => {
+        debugger;
+        this.carsData;
+      },
+      error: (err) => {
+        debugger;
+      }
+    })
+  }
+
   goScroll(target: HTMLElement, car?: ICar) {
     target.scrollIntoView({ behavior: 'smooth' });
     if (car) {
@@ -125,7 +74,16 @@ export class AppComponent {
   priceActionHandler() {
     if (this.priceForm.valid) {
       alert('Спасибо за заявку, мы свяжемся с вами в ближайшее время!');
-      this.appService.sendQuary(this.priceForm);
+      this.appService.sendQuary(this.priceForm.value)
+      .subscribe({
+        next: (res) => {
+          debugger;
+        },
+        error: (err) => {
+          debugger;
+        }
+      });
+      this.priceForm.reset();
     }
 
     if (this.priceForm.get('name')?.value === '') {
@@ -137,7 +95,5 @@ export class AppComponent {
     if (this.priceForm.get('car')?.value === '') {
       alert('Заполните поле желаемый автомобиль!');
     }
-
-    this.priceForm.reset();
   }
 }
