@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
     .subscribe({
       next: (res) => {
         debugger;
-        this.carsData;
+        this.carsData = res as ICar[];
       },
       error: (err) => {
         debugger;
